@@ -2,9 +2,9 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Ma Musique{% endblock %}</title>
         <link rel="stylesheet" href="https://bootswatch.com/4/lumen/bootstrap.min.css">
-        
+        <link rel="stylesheet" href="{{asset('css/app.css')}}">
         {% block stylesheets %}{% endblock %}
 
         {% block javascripts %}
@@ -12,6 +12,33 @@
         {% endblock %}
     </head>
     <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href=" {{path('accueil')}} ">Ma Musique</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Gestion des artistes</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="{{path('artistes')}}">Liste des artistes</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Ajouter un artiste</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown show">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">Gestion des albums</a>
+        <div class="dropdown-menu show" style="position: absolute; transform: translate3d(0px, 37px, 0px); top: 0px; left: 0px; will-change: transform;" x-placement="bottom-start">
+        <a class="dropdown-item" href=" {{path('albums')}} ">Liste des albums</a>
+    </div>
+  </li>
+    </ul>
+     
+  </div>
+</nav>
+        <div class="container">
         {% block body %}{% endblock %}
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
